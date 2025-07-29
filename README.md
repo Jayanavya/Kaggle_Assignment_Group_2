@@ -37,7 +37,7 @@ Since machine learning models can't read text directly, we converted text column
 **6. Training Machine Learning Models**
 We tried and compared several models:
 
-Random Forest
+Linear Regression
 
 XGBoost (Accuracy: 0.7999)
 
