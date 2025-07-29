@@ -10,7 +10,7 @@ test.csv – Unlabeled data used to make final predictions
 
 submission.csv – The final predictions file to upload to Kaggle
 
-# Steps in the Projec
+# Steps in the Project
 **1. Importing Libraries**
 We use tools like Pandas, NumPy, Scikit-learn, XGBoost, and TensorFlow to help us work with data and build models.
 
