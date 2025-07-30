@@ -72,6 +72,7 @@ random_state=42
 Fast training and efficient memory use.
 
 Achieved the best Kaggle score: 0.80702, outperforming XGBoost
+
 **7. Evaluated models using:**
 accuracy_score
 
