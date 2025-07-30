@@ -34,18 +34,55 @@ Cleaned spending columns and filled missing values smartly based on CryoSleep st
 **5. Encoding Categorical Data**
 Since machine learning models can't read text directly, we converted text columns to numbers using Label Encoding.
 
-**6. Training Machine Learning Models**
-We tried and compared several models:
+**6.  Models Used and Hyperparameters**
+# Logistic Regression
 
-Linear Regression
+Tuned using GridSearchCV over:
 
-XGBoost (Accuracy: 0.7999)
+solver: liblinear, saga
 
-LightGBM (Best result on Kaggle: 0.80702)
+penalty: l1, l2
 
-**7. Explaining the Predictions**
+C: [0.01, 0.1, 1, 10, 100]
+
+Purpose: baseline model and regularization testing (L1 for feature selection, L2 for smoothing).
+
+Best model chosen based on cross-validation accuracy.
+
+# XGBoost
+
+Used with:
+
+eval_metric='logloss'
+
+random_state=42
+
+Quick and effective on structured/tabular data.
+
+Handled missing values and complex patterns without deep tuning.
+
+Achieved accuracy of ~0.7999.
+
+# LightGBM
+
+Initialized with:
+
+random_state=42
+
+Fast training and efficient memory use.
+
+Achieved the best Kaggle score: 0.80702, outperforming XGBoost
+**7. Evaluated models using:**
+accuracy_score
+
+ConfusionMatrixDisplay
+
+Other metrics like precision, recall, and F1-score
+
+**8. Explaining the Predictions**
+SHAP (SHapley Additive exPlanations) is a tool used in the field of Explainable AI (XAI).
 We used SHAP values to understand which features were most important in making predictions.
 
-**8. Making Final Predictions**
+**9. Making Final Predictions**
 Used the best model (Light BGM) to predict on the test dataset and created a submission.csv file to upload to Kaggle.
 
